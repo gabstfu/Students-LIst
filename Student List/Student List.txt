@@ -4,7 +4,11 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
 
-    static String setGender(int choice) {
+    static String setGender() {
+        System.out.println("Select gender of student");
+        System.out.println("[1] - Male");
+        System.out.println("[2] - Female");
+        int choice = scanner.nextInt();
         String gender = "";
         switch (choice) {
             case 1:
@@ -82,7 +86,7 @@ public class Main {
         System.out.println("Enter student age:");
         int age = scanner.nextInt();
         scanner.nextLine(); // Consume newline character
-        String gender = setGender(age);
+        String gender = setGender();
         String yearLevel = setYearLevel();
         String course = setCourse();
         return new Student(id, name, age, gender, yearLevel, course);
@@ -96,7 +100,7 @@ public class Main {
         System.out.println("Enter new student age:");
         student.age = scanner.nextInt();
         scanner.nextLine(); // consume the newline character
-        student.gender = setGender(student.age);
+        student.gender = setGender();
         student.yearLevel = setYearLevel();
         student.course = setCourse();
         System.out.println("Student information updated successfully!");
